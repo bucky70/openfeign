@@ -8,9 +8,9 @@ public class ImageService {
 
 
     @Autowired
-    private CatFeignClient catFeignClient;
+    private ImageFeignClient imageFeignClient;
 
     public byte[] getImage(Integer id){
-        return catFeignClient.getImage(id);
+        return imageFeignClient.getImage(id);
     }
 }

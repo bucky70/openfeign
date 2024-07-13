@@ -14,13 +14,13 @@ public class CatController {
     @Autowired
     private ImageService imageService;
 
-    @GetMapping(value="/cat/{id}",produces = MediaType.IMAGE_JPEG_VALUE)
+    @GetMapping(value="/photos/{id}",produces = MediaType.IMAGE_JPEG_VALUE)
     public ResponseEntity<byte[]> getImage(@PathVariable Integer id) { //
         byte[] image = imageService.getImage(id);
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(image);
 
     }
-    @GetMapping("/cat")
+    @GetMapping("/photo")
     public String getCatString(){
         return "meow";
     }
